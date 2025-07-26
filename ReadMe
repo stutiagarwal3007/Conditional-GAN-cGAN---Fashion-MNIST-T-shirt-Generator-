@@ -46,3 +46,5 @@ After training, you can generate a T-shirt image like this:
 2. Install TensorFlow if not already available:
    ```python
    !pip install tensorflow --quiet
+
+python cgan_fashion_mnist.py
