@@ -1,0 +1,48 @@
+# Conditional GAN (cGAN) - Fashion MNIST (T-shirt Generator)
+
+This project implements a Conditional Generative Adversarial Network (cGAN) in TensorFlow/Keras to generate **T-shirt images** from the **Fashion-MNIST** dataset. It is designed to help beginners understand how conditional image generation works.
+
+## 📌 What is a Conditional GAN?
+
+A Conditional GAN is a variant of a Generative Adversarial Network (GAN) where **both the generator and discriminator receive extra information (like a label)** to condition the generation process. This means you can guide the generator to create a specific type of image — for example, **a T-shirt instead of random clothing**.
+
+In this project, we train the cGAN to generate Fashion-MNIST items based on specific class labels, focusing especially on generating class **0 = T-shirt/top**.
+
+---
+
+## 🧠 How It Works
+
+- **Input**:
+  - Random noise vector (`z`)
+  - Class label (e.g., `0` for T-shirt)
+  
+- **Generator**:
+  - Takes noise + label and produces a 28x28 grayscale image.
+  
+- **Discriminator**:
+  - Takes image + label and predicts if it's real or fake.
+  
+- **Training**:
+  - The generator learns to produce images that fool the discriminator.
+  - The discriminator learns to distinguish real from fake images, given the label.
+
+---
+
+## 🖼 Sample Output
+
+After training, you can generate a T-shirt image like this:
+
+<p align="center">
+  <img src="generated_tshirt_sample.png" width="200">
+</p>
+
+> Note: The quality of the generated image improves with training and tuning (epochs, batch size, loss balancing, etc.)
+
+---
+
+## 🔧 Setup Instructions (Google Colab Recommended)
+
+1. Clone the repository or upload `cgan_fashion_mnist.py` to Colab.
+2. Install TensorFlow if not already available:
+   ```python
+   !pip install tensorflow --quiet
